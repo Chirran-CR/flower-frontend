@@ -30,7 +30,8 @@ const LoginRegister = ({ location,userData,addUser }) => {
     e.preventDefault();
     const {name,email,password} = user
     if (name && email && password){
-      axios.post("http://localhost:4000/register",user )
+      // axios.post("http://localhost:4000/register",user )
+      axios.post("https://flower-api.onrender.com/register",user )
       .then(res=>{alert(res.data.message); 
       })
     }
@@ -43,7 +44,8 @@ const LoginRegister = ({ location,userData,addUser }) => {
   }
   const handleLogin =(e)=>{
     e.preventDefault();
-    axios.post("http://localhost:4000/login",user)
+    // axios.post("http://localhost:4000/login",user)
+    axios.post("https://flower-api.onrender.com/login",user)
     .then(res=>{alert(res.data.message)
     // setLoginUser(res.data.user)
     setUser({name:"",
